@@ -1,6 +1,8 @@
 services:
   api:
-    build: .
+    build:
+      context: ../..
+      dockerfile: examples/mssql/Dockerfile
     ports:
       - "8000:8000"
     environment:

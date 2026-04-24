@@ -115,8 +115,6 @@ Full demo APIs (intentionally vulnerable for testing sqlmap/injectify):
 - [examples/mysql](examples/mysql)
 - [examples/mssql](examples/mssql)
 
-Каждое демо поднимает **все** маршруты с `@injectify`: старые сценарии по HTTP-методам (`/users`, …) и отдельные **GET**-эндпоинты по типу инъекции под префиксом `/sqli/` (reflected/UNION с таблицей `secrets`, error-based, blind boolean, blind time, `ORDER BY`, `LIKE`, `HAVING`). Часть маршрутов задаёт `sqlmap_extra` с `--technique=…` для узкого прогона. При старте приложения **sqlmap вызывается отдельно для каждой пары (путь, метод)**, поэтому время запуска растёт с числом таких маршрутов. Список URL см. в ответе `GET /` у соответствующего примера.
-
 ## Security note
 
 This tool is intended for **authorized** security testing and development. Only run sqlmap against systems you own or have explicit permission to test.
